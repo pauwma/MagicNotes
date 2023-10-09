@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoteFragment"
+    android:background="@color/background">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:cropToPadding="false"
+        app:cardBackgroundColor="@color/background"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/outline">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="44dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button"
+            android:paddingBottom="2dp"
+            android:src="@drawable/back_arrow" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/title_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/montserrat_bold"
+            android:hint="@string/hint_title_note"
+            android:singleLine="true"
+            android:inputType="text"
+            android:textColorHint="@color/hint"
+            android:textColor="@color/white_text"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/description_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/montserrat_medium"
+            android:hint="@string/hint_title_note"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:singleLine="true"
+            android:scrollbars="none"
+            android:textColorHint="@color/hint"
+            android:textColor="@color/white_text"
+            android:alpha="0.85"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

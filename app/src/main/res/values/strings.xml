@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MagicNotes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hola pepsicola</string>
+    <string name="hint_home_search">Buscar en tus notas</string>
+    <string name="hint_title_note">Escribe un título</string>
+    <string name="name_order_button">Nombre</string>
+    <string name="time_order_button">Fecha</string>
+</resources>

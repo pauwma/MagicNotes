@@ -1,0 +1,316 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.example.magicnotes.Items.CustomAppBarBehavior"
+        android:background="@android:color/transparent">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleEnabled="false"
+            app:contentScrim="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            >
+
+            <!-- TODO: Añade aquí todo lo que deseas que se colapse -->
+            <!-- Por ejemplo, el layout de búsqueda y el layout de filtros -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Tu barra de búsqueda, filtros, etc. -->
+
+                <LinearLayout
+                    android:id="@+id/search_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/custom_edit_text"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@android:color/transparent"
+                        android:cropToPadding="false"
+                        android:padding="10dp"
+                        android:scaleType="center"
+                        android:src="@drawable/hamburguer_menu" />
+
+                    <EditText
+                        android:id="@+id/barra"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="48dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="@string/hint_home_search"
+                        android:maxLines="1"
+                        android:paddingRight="12dp"
+                        android:textColor="@color/white_text"
+                        android:textColorHint="@color/hint"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image_view"
+                    android:layout_width="40dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="6dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintBottom_toBottomOf="@+id/search_bar"
+                    app:layout_constraintEnd_toEndOf="@+id/search_bar"
+                    app:layout_constraintTop_toTopOf="@+id/search_bar" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:visibility="visible"
+                    android:id="@+id/filterLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintEnd_toEndOf="@+id/search_bar"
+                    app:layout_constraintStart_toStartOf="@+id/search_bar"
+                    app:layout_constraintTop_toBottomOf="@+id/search_bar">
+
+                    <LinearLayout
+                        android:id="@+id/leftFiltersLinearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/nameOrderCardView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:clickable="true"
+                            android:cropToPadding="false"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/background"
+                            app:cardCornerRadius="8dp"
+                            app:layout_constraintEnd_toEndOf="@+id/profile_image_view"
+                            app:layout_constraintStart_toEndOf="@+id/search_bar"
+                            app:layout_constraintTop_toBottomOf="@+id/profile_image_view"
+                            app:strokeColor="@color/outline">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/nameOrderConstraintLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/custom_button"
+                                android:gravity="center"
+                                android:paddingHorizontal="4dp"
+                                android:paddingVertical="2.5dp">
+
+                                <TextView
+                                    android:id="@+id/nameOrderTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:text="@string/name_order_button"
+                                    android:textColor="@color/white_text"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/nameOrderImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginEnd="3dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:src="@drawable/arrow_order"
+                                    app:layout_constraintBottom_toBottomOf="@+id/nameOrderTextView"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/nameOrderTextView"
+                                    app:layout_constraintTop_toTopOf="@+id/nameOrderTextView" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/dateOrderCardView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:cropToPadding="false"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/background"
+                            app:cardCornerRadius="8dp"
+                            app:layout_constraintEnd_toEndOf="@+id/profile_image_view"
+                            app:layout_constraintStart_toEndOf="@+id/search_bar"
+                            app:layout_constraintTop_toBottomOf="@+id/profile_image_view"
+                            app:strokeColor="@color/outline">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/dateOrderConstraintLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/custom_button"
+                                android:gravity="center"
+                                android:paddingHorizontal="4dp"
+                                android:paddingVertical="2.5dp">
+
+                                <TextView
+                                    android:id="@+id/orderDateTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:text="@string/time_order_button"
+                                    android:textColor="@color/white_text"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/dateOrderImageView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginEnd="3dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:src="@drawable/arrow_order"
+                                    app:layout_constraintBottom_toBottomOf="@+id/orderDateTextView"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/orderDateTextView"
+                                    app:layout_constraintTop_toTopOf="@+id/orderDateTextView" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:cropToPadding="false"
+                        app:cardBackgroundColor="@color/background"
+                        app:cardCornerRadius="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@color/outline">
+
+                        <ImageButton
+                            android:id="@+id/orderButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/custom_button"
+                            android:paddingHorizontal="5dp"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="5dp"
+                            android:src="@drawable/table_rows" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/selectedLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical|end"
+            android:layout_marginHorizontal="4dp"
+            android:visibility="gone">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:cropToPadding="false"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/outline">
+
+                <ImageButton
+                    android:id="@+id/deleteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/custom_button"
+                    android:paddingHorizontal="5dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="5dp"
+                    android:src="@drawable/trash_can" />
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notes_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="0dp"
+        android:src="@drawable/rounded_add"
+        app:backgroundTint="@color/primary"
+        app:layout_anchor="@id/notes_recycler_view"
+        app:layout_anchorGravity="bottom|end" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

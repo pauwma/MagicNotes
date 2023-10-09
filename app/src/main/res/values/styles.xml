@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomFAB" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="tint">@color/white_text</item>
+        <item name="fabSize">auto</item>
+        <item name="borderWidth">2dp</item>
+        <item name="backgroundTint">@color/primary</item>
+    </style>
+
+    <style name="accent_button" parent="CardView">
+        <item name="backgroundColor">@color/primary</item>
+    </style>
+
+</resources>
